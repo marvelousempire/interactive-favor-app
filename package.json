@@ -1,0 +1,22 @@
+{
+  "name": "interactive-favor-app",
+  "version": "0.1.0",
+  "description": "Gamified favor economy powered by P-more (Perceived Moment of Real Energy) credits",
+  "private": true,
+  "scripts": {
+    "start": "echo \"Scaffolding in progress\"",
+    "dev": "echo \"Scaffolding in progress\""
+  },
+  "keywords": [
+    "favor",
+    "p-more",
+    "nft",
+    "reputation",
+    "gamification",
+    "unity",
+    "electron",
+    "capacitor"
+  ],
+  "author": "marvelousempire",
+  "license": "UNLICENSED"
+}
