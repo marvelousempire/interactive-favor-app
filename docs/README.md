@@ -3,7 +3,9 @@
 ## Core Product
 - [Technical Specification v0.1](./tech-spec.md) — system overview, components, data flows, open decisions
 - [Engineering Dependency Table](./dependency-table.md) — what depends on what, status, build order
+- [Scoreboard](./scoreboard.md) — all scores in the system and how they relate
 - [YONAW Voting Algorithm](./yonaw-algorithm.md) — community valuation mechanism
+- [Y-score](./y-score.md) — reputation volatility definition and parameters
 - [Quadratic Voting Exploration](./quadratic-voting.md) — intensity layer + recommended hybrid
 
 ## Privacy & Sybil Resistance
