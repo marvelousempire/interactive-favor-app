@@ -1,42 +1,91 @@
-# Engineering Dependency Table — Interactive Favor App (P-more)
+# Engineering Dependency & Priority Table
 
-This table maps every major component, its current status, what it depends on, and recommended implementation priority.
+## How to Read This Table
 
-| Component | Status | Depends On | Priority | Recommended Tech / Notes |
-|-----------|--------|------------|----------|--------------------------|
-| **P-more Credit Core** | Design only | — | P0 | NFT or internal ledger. Formula still open (effort + time + skill + energy variables). |
-| **YONAW Voting** | Implemented (src/yonaw) | Types, Credibility | P0 | Pure TS scoring. Already supports slider + quadratic intensity flag. |
-| **Quadratic Voice Credits** | Designed + partial | YONAW, IdentityScore | P0 | 100 credits per favor, √ cost. Equal base budget. |
-| **Reputation: Performance** | Design | YONAW aggregation | P1 | Updated from final favor_value. |
-| **Reputation: Credibility** | Design | Chain of responsibility | P1 | 20% decay over max 5 hops. Affects vote power. |
-| **Reputation: Reach** | Design | Network graph | P2 | Dune-style map visualization. |
-| **Reputation: Y-score** | Design | Performance history | P2 | Volatility tracker (±0.1 / ±0.2). |
-| **Sybil / IdentityScore** | Implemented (src/sybil) | Age, activity, network, PoP stubs | P0 | Gates voice credits & canVote. |
-| **Semaphore / Nullifiers** | Stubs + docs (src/semaphore) | Merkle tree, ZK libs | P1 | Use official @semaphore-protocol. externalNullifier = hash("yonaw-vote", favorId). |
-| **Merkle Membership** | Documented | Identity commitments | P1 | Required by Semaphore. Poseidon preferred for ZK. |
-| **Zero-Knowledge Layer** | Documented | Semaphore, IdentityScore | P1 | Optional PoP boost for full credits. |
-| **Favor Marketplace / IOUs** | Concept only | P-more credits, Reputation | P2 | Buy/sell/trade credits. |
-| **Honor Contracts** | Concept only | Approval Engine, notarization | P2 | Private agreements backed by NFTs. |
-| **Gamified Network Map** | Concept only | Reach score, Unity | P2 | 2D + 3D, fog-of-war reveal. |
-| **App Shell** | Scaffold | — | P1 | Electron + Capacitor + Swift (iOS). |
-| **Backend / Storage** | Open decision | All data models | P0 | Needed before production. |
-| **NFT / Blockchain Layer** | Open decision | P-more credits | P2 | Optional; can start with internal ledger. |
+- **Depends on** = must be stable before this component can be finished.
+- **Status** = Design / Stub / Implemented / Blocked.
+- **Priority** = P0 (critical path) → P3 (can wait).
 
-## Priority Legend
-- **P0**: Must have for first working vertical slice (favor → vote → value).
-- **P1**: Required for trustworthy production use.
-- **P2**: Important for full vision but can follow later.
+---
 
-## Critical Path (recommended build order)
-1. Backend + data models (P-more, users, votes)
-2. YONAW scoring + IdentityScore gating
-3. Quadratic voice credits
-4. Basic Reputation updates
-5. Semaphore nullifier integration for vote uniqueness
-6. Marketplace + map + advanced reputation
+## Core Engine
 
-## Open Decisions
-- Exact P-more calculation formula
-- Backend choice (Postgres + Node, Supabase, custom, etc.)
-- Whether to mint real NFTs on day one or use an internal credit ledger
-- Primary Proof-of-Personhood provider (World ID, Gitcoin Passport, zkPassport, etc.)
+| Component | Depends on | Status | Priority | Tech / Notes |
+|-----------|------------|--------|----------|--------------|
+| YONAW scoring (`src/yonaw/`) | — | Implemented | P0 | Pure TS functions |
+| Vote aggregation | YONAW scoring | Implemented | P0 | Same module |
+| Quadratic voice-credit budget | YONAW scoring | Designed | P0 | Needs dedicated module + persistence |
+| IdentityScore / Sybil (`src/sybil/`) | — | Implemented | P0 | Gates voice credits & voting |
+| Voice-credit × IdentityScore wiring | Quadratic + IdentityScore | Not started | P0 | Simple multiplier |
+| Reputation update engine (Performance, Credibility, Y-score) | Aggregation events | Designed | P0 | Chain-of-responsibility math |
+| Reach / network graph | Reputation + favor history | Designed | P1 | Feeds Unity map |
+
+## Privacy & Uniqueness
+
+| Component | Depends on | Status | Priority | Tech / Notes |
+|-----------|------------|--------|----------|--------------|
+| Semaphore nullifier helpers | — | Stub | P1 | `src/semaphore/nullifier.ts` |
+| Merkle membership (group tree) | Identity commitments | Stub | P1 | Official `@semaphore-protocol/group` |
+| Semaphore proof generation / verification | Nullifier + Merkle | Stub | P1 | Swap placeholders for real Poseidon + `@semaphore-protocol/proof` |
+| External nullifier convention | Favor ID | Documented | P1 | `hash("yonaw-vote", favorId)` |
+| Nullifier store (used-set) | Proof verification | Not started | P1 | DB or on-chain mapping |
+| Optional World ID / PoP boost | IdentityScore | Designed | P2 | Boosts IdentityScore |
+
+## Product Surfaces
+
+| Component | Depends on | Status | Priority | Tech / Notes |
+|-----------|------------|--------|----------|--------------|
+| Favor creation & P-more record | — | Designed | P0 | Schema + storage |
+| Voting UI (YONAW form) | YONAW scoring, voice credits, IdentityScore | Not started | P0 | Electron / Capacitor |
+| Review threshold & Why privacy | Aggregation | Designed | P1 | Hide until 13 reviews |
+| Tip receipt handling | Aggregation (high score path) | Designed | P1 | Manual → zkTLS later |
+| Honor contracts | P-more record | Designed | P2 | Link to Approval Engine |
+| Marketplace / IOU | P-more + reputation | Designed | P2 | |
+| Unity network map (2D/3D) | Reach graph | High-level | P2 | Unity + data service |
+| App shell (Electron + Capacitor + Swift) | Core engine | Scaffold | P1 | |
+
+## Infrastructure
+
+| Component | Depends on | Status | Priority | Tech / Notes |
+|-----------|------------|--------|----------|--------------|
+| User / identity store | — | Not started | P0 | |
+| Favor + vote store | — | Not started | P0 | |
+| Nullifier + reputation event store | — | Not started | P0 | |
+| API layer | Stores + core engine | Not started | P0 | |
+| Auth | IdentityScore / optional PoP | Not started | P0 | |
+| Background jobs (aggregation close, reputation updates) | Event store | Not started | P1 | |
+
+## Recommended Build Order (Critical Path)
+
+1. **P0 foundation**  
+   User/favor/vote storage → wire IdentityScore into voice credits → finish quadratic module → expose YONAW scoring via API.
+
+2. **P0 voting path**  
+   Voting UI → submit vote (IdentityScore + credits + YONAW) → aggregation → reputation updates.
+
+3. **P1 privacy**  
+   Real Semaphore packages + nullifier store → optional uniqueness proof for full credit budget.
+
+4. **P1 app shell**  
+   Electron/Capacitor shell around the working voting flow; Swift polish later.
+
+5. **P2 leverage surfaces**  
+   Reach graph → Unity map → marketplace / honor contracts.
+
+## External Dependencies (Expected)
+
+| Package / Service | Used by | Notes |
+|-------------------|---------|-------|
+| `@semaphore-protocol/identity` | Semaphore identity | Official |
+| `@semaphore-protocol/group` | Merkle tree of commitments | Official |
+| `@semaphore-protocol/proof` | Proof gen/verify | Official |
+| `poseidon-lite` or circuit Poseidon | Nullifier & commitments | Must match circuit |
+| Unity | Network map | 2D + 3D |
+| Electron + Capacitor | App shell | |
+| Swift | iOS native layer | |
+| Postgres (or equivalent) | Primary store | Lean |
+| Optional: World ID / zkPassport | PoP boost | |
+
+---
+
+*This table is the engineering source of truth for sequencing work. Update status as components move from Designed → Stub → Implemented.*
