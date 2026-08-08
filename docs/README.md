@@ -1,8 +1,12 @@
 # Documentation Index
 
-**Session record:** [Architecture Session 2026-08](./architecture-session-2026-08.md) — full inventory of design work landed this pass.
+**Session record:** [Architecture Session 2026-08](./architecture-session-2026-08.md) — full inventory of design work landed this pass.  
+**Product framing (2026-08-08):** [What Favor Is](./favor-product.md) · [Verb / Noun Favors](./verb-noun-favors.md) · [Favor Barter & Solvency](./favor-barter-solvency.md)
 
 ## Core Product
+- [What Favor Is — Product Definition](./favor-product.md) — social-capital ledger, butterfly-net framing, not a chore marketplace
+- [Verb Favors and Noun Favors](./verb-noun-favors.md) — action vs provision taxonomy + UI tabs
+- [Favor Barter and Solvency](./favor-barter-solvency.md) — cash + favor settlement, escrow alternative, proposed-favors catalog, proof rules
 - [Technical Specification v0.4](./tech-spec.md) — system overview, components, data flows, open decisions
 - [Engineering Dependency Table](./dependency-table.md) — what depends on what, status, build order
 - [Open Work](./open-work.md) — consolidated architecture backlog
@@ -36,6 +40,7 @@
 - [Favor Moment Matrix](./favor-moment-matrix.md) — product consumption contracts, claim path, steward wiring, non-goals
 - [Score Namespaces](./score-namespaces.md) — Favor-side SCORE-NAMESPACES contract summary
 - [Emotion Modeling](./emotion-modeling.md) — VAD, Plutchik wheel, valence–arousal mapping, sentiment model comparison
+- [Session closeout — Moment Matrix stencil](./session-closeout-moment-matrix-stencil-2026-08-08.md) — upstream extractor status
 
 ## Privacy & Sybil Resistance
 - [Zero-Knowledge Proofs](./zero-knowledge.md) — overview and integration path
@@ -43,4 +48,4 @@
 - [Semaphore Circuits](./semaphore-circuits.md) — inputs, constraints, YONAW external-nullifier convention
 - [Merkle Tree Membership Proofs](./merkle-membership.md) — efficient group membership proofs
 
-These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, Bishop birth roles, Kingdom houses counsel pipeline, senses mapping, instrument rack, Moment Matrix, Microslice Solvency Formula, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
+These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the product definition (social-capital ledger, verb/noun favors, barter solvency), desktop stack, agent factory direction, Bishop birth roles, Kingdom houses counsel pipeline, senses mapping, instrument rack, Moment Matrix, Microslice Solvency Formula, and measurement instruments researched across the Semantic Node Framework and Media Resolver.

@@ -1,8 +1,8 @@
 # Open Work Backlog — Architecture Sessions 2026-08-07/08
 
-Consolidated gaps from agent platform, senses, instrument rack, Moment Matrix, Kingdom houses, solvency formula, and desktop stack work. Update status as items close.
+Consolidated gaps from product framing, agent platform, senses, instrument rack, Moment Matrix, Kingdom houses, solvency formula, and desktop stack work. Update status as items close.
 
-See also: [architecture-session-2026-08.md](./architecture-session-2026-08.md) · [dependency-table.md](./dependency-table.md)
+See also: [architecture-session-2026-08.md](./architecture-session-2026-08.md) · [dependency-table.md](./dependency-table.md) · [favor-product.md](./favor-product.md)
 
 ---
 
@@ -15,6 +15,21 @@ See also: [architecture-session-2026-08.md](./architecture-session-2026-08.md) �
 | Finish quadratic module + API | |
 | Voting UI path | Electron / Capacitor |
 | API layer + auth | |
+
+---
+
+## P0 — Product exchange model (documented 2026-08-08; build next)
+
+| Item | Source doc | Status |
+|------|------------|--------|
+| Product definition: social-capital ledger | [favor-product.md](./favor-product.md) | **Docs done** |
+| Verb vs Noun favor taxonomy + UI tabs | [verb-noun-favors.md](./verb-noun-favors.md) | **Docs done** |
+| Barter settlement (cash % + favors) | [favor-barter-solvency.md](./favor-barter-solvency.md) | **Docs done** |
+| Proposed-favors catalog data model | favor-barter-solvency.md | **Open** — implement |
+| Escrow alternative on favor-primary deals | favor-barter-solvency.md | **Open** — provider choice |
+| Proof tiers for high claimed values | favor-barter-solvency.md | **Open** — policy + UX |
+| Obligation timeline / breach UX | verb-noun-favors.md | **Open** |
+| Legal stance on honor-contract enforceability | favor-product.md | **Open** — jurisdiction |
 
 ---
 
@@ -95,11 +110,16 @@ See also: [architecture-session-2026-08.md](./architecture-session-2026-08.md) �
 - No Matrix axes as Ready Play match outcomes or quadratic multipliers
 - No twelve permanent agents for twelve Kingdom sides
 - No inventing registry roles outside the fourteen without SNF update
+- No framing Favor as a state social-credit system
+- No chore-marketplace-first positioning (network leverage is the product language)
 
 ---
 
 ## Related
 
+- [What Favor Is](./favor-product.md)
+- [Verb / Noun Favors](./verb-noun-favors.md)
+- [Favor Barter & Solvency](./favor-barter-solvency.md)
 - [Architecture Session 2026-08](./architecture-session-2026-08.md)
 - [Dependency Table](./dependency-table.md)
 - [Agent Platform](./agent-platform.md)
