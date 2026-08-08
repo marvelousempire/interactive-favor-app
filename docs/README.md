@@ -23,6 +23,7 @@
 - [Bishop Birth Roles](./bishop-birth-roles.md) — role registry, interaction class, capability posture, Favor steward mapping
 - [Favor Stewards](./favor-stewards.md) — which roles deserve durable Bishop births + consciousness templates
 - [Senses Architecture](./senses-architecture.md) — five-sense channels mapped onto BeingProfile consciousness and instrument rack
+- [Kingdom Houses](./kingdom-houses.md) — 7-house reasoning pipeline, 6 contrasting pairs, counsel vs authority
 
 ## Measurement Instruments & Lived Meaning
 - [Instrument Rack](./instrument-rack.md) — rack layers, mounts, read contract, missing-data, senses attachment, Favor consumption
@@ -37,4 +38,4 @@
 - [Semaphore Circuits](./semaphore-circuits.md) — inputs, constraints, YONAW external-nullifier convention
 - [Merkle Tree Membership Proofs](./merkle-membership.md) — efficient group membership proofs
 
-These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, Bishop birth roles, senses mapping, instrument rack, Moment Matrix, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
+These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, Bishop birth roles, Kingdom houses counsel pipeline, senses mapping, instrument rack, Moment Matrix, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
