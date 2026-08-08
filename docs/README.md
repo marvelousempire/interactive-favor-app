@@ -19,6 +19,7 @@
 ## Client Architecture
 - [Desktop Stack](./desktop-stack.md) — Electron foundation, Capacitor mobile twin, Unity embedded layer, WordPress backend engine
 - [Agent Platform](./agent-platform.md) — Bishop Factory + Optimus Nephew fusion; being profiles; multi-agent direction
+- [Senses Architecture](./senses-architecture.md) — five-sense channels mapped onto BeingProfile consciousness and instrument rack
 
 ## Measurement Instruments & Lived Meaning (SNF / Media Resolver fusion)
 - [Moment Matrix](./moment-matrix.md) — multi-axis measurement (affect, philosophy, mindset, social, operational, policy)
@@ -31,4 +32,4 @@
 - [Semaphore Circuits](./semaphore-circuits.md) — inputs, constraints, YONAW external-nullifier convention
 - [Merkle Tree Membership Proofs](./merkle-membership.md) — efficient group membership proofs
 
-These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
+These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, senses mapping, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
