@@ -4,7 +4,7 @@
 **House:** 5 · stage `solvency` · `house:solvency`  
 **Pair:** Precision vs Vision (`pair:precision-vision`)  
 **Doctrine:** `philosophy-kingdoms/kingdoms/precision|vision`  
-**Related measurement:** Microslice Solvency Formula (`philosophy-micro-slices/slice-spec/formula/`) → Moment Matrix `solvency.stencil_v1`
+**Related measurement:** [Microslice Solvency Formula](./microslice-solvency-formula.md) → `solvency.stencil_v1`
 
 ---
 
@@ -16,6 +16,8 @@
 | **Microslice Solvency Formula** | Verb·Noun·Destination·Quality·Time completeness score | `execution_input` measurement — still not policy permission |
 
 House 5 *uses* precision/vision lenses and may consult the formula. The formula score never authorizes action by itself. Policy still authorizes; witnesses still prove.
+
+Full formula weights, failure ladder, and Favor wiring: [microslice-solvency-formula.md](./microslice-solvency-formula.md).
 
 ---
 
@@ -73,42 +75,15 @@ Both sides required when the pair is selected. One side cannot impersonate the p
 
 ---
 
-## Microslice Solvency Formula (measurement)
-
-Canonical shape:
+## Microslice Solvency Formula (summary)
 
 ```text
-Verb + [filler] + Noun + Destination + Quality + [filler] + Time
+Verb + Noun + Destination + Quality + Time
+Weights: 0.25 + 0.25 + 0.25 + 0.125 + 0.125
+Pass: score ≥ 0.90
 ```
 
-Example: `Close + the + door + downstairs + softly + at night`
-
-| Component | Required | Weight |
-|-----------|----------|--------|
-| Verb | yes | 0.25 |
-| Noun | yes | 0.25 |
-| Destination | yes | 0.25 |
-| Quality | yes | 0.125 |
-| Time | yes | 0.125 |
-
-**Pass rule:** score ≥ **0.90** only when slots are filled. Blank slots → slice not ready to ship.
-
-Stencil metaphor: draw accurate corners; if a slot stays empty, do not pretend the shape is complete.
-
-Moment Matrix namespace: `solvency.stencil_v1` · `permitted_use: execution_input` · never policy authorization alone.
-
-Offline Moment Matrix engine often detects Verb/Noun reliably and leaves Destination/Quality/Time incomplete — honest `needs-information`, not fake pass.
-
-Broader scoring metrics in doctrine (Clarity, Intent Strength, Valid Intent Pass, Completeness, Feasibility, Risk load, Precision Level, Emotional weight) feed **routing** of microslices to Kingdom pairs. They remain measurement/counsel for routing, not a soul score.
-
-Routing thresholds (doctrine, microslice router):
-
-| Score band | Behavior |
-|------------|----------|
-| ≥ 85 | High priority, minimal pairs |
-| 65–84 | Standard 2–4 pairs |
-| 40–64 | Heavy analysis, more pairs |
-| < 40 | Clarify before routing |
+Namespace `solvency.stencil_v1`. See [microslice-solvency-formula.md](./microslice-solvency-formula.md).
 
 ---
 
@@ -144,6 +119,7 @@ Targeted Kingdom route for hard Favor decisions can include **Pair 5 only** when
 
 ## Related
 
+- [Microslice Solvency Formula](./microslice-solvency-formula.md)
 - [Kingdom Houses](./kingdom-houses.md)
 - [Moment Matrix](./moment-matrix.md)
 - [Score Namespaces](./score-namespaces.md)

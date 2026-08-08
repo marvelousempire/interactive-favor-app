@@ -24,7 +24,8 @@
 - [Favor Stewards](./favor-stewards.md) — which roles deserve durable Bishop births + consciousness templates
 - [Senses Architecture](./senses-architecture.md) — five-sense channels mapped onto BeingProfile consciousness and instrument rack
 - [Kingdom Houses](./kingdom-houses.md) — 7-house reasoning pipeline, 6 contrasting pairs, counsel vs authority
-- [Solvency House](./solvency-house.md) — House 5 Precision/Vision + Microslice Solvency Formula / stencil
+- [Solvency House](./solvency-house.md) — House 5 Precision/Vision counsel
+- [Microslice Solvency Formula](./microslice-solvency-formula.md) — Verb·Noun·Destination·Quality·Time stencil, weights, ≥0.90 gate
 
 ## Measurement Instruments & Lived Meaning
 - [Instrument Rack](./instrument-rack.md) — rack layers, mounts, read contract, missing-data, senses attachment, Favor consumption
