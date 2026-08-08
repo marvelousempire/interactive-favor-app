@@ -21,10 +21,11 @@
 - [Agent Platform](./agent-platform.md) — Bishop Factory + Optimus Nephew fusion; being profiles; multi-agent direction
 - [Senses Architecture](./senses-architecture.md) — five-sense channels mapped onto BeingProfile consciousness and instrument rack
 
-## Measurement Instruments & Lived Meaning (SNF / Media Resolver fusion)
+## Measurement Instruments & Lived Meaning
+- [Instrument Rack](./instrument-rack.md) — rack layers, mounts, read contract, missing-data, senses attachment, Favor consumption
+- [Instruments Library](./instruments-library.md) — measurement shapes, families, shipped instruments, productization path
 - [Moment Matrix](./moment-matrix.md) — multi-axis measurement (affect, philosophy, mindset, social, operational, policy)
 - [Emotion Modeling](./emotion-modeling.md) — VAD, Plutchik wheel, valence–arousal mapping, sentiment model comparison
-- [Instruments Library](./instruments-library.md) — measurement shapes, families, shipped instruments, productization path
 
 ## Privacy & Sybil Resistance
 - [Zero-Knowledge Proofs](./zero-knowledge.md) — overview and integration path
@@ -32,4 +33,4 @@
 - [Semaphore Circuits](./semaphore-circuits.md) — inputs, constraints, YONAW external-nullifier convention
 - [Merkle Tree Membership Proofs](./merkle-membership.md) — efficient group membership proofs
 
-These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, senses mapping, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
+These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, senses mapping, instrument rack, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
