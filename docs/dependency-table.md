@@ -6,6 +6,8 @@
 - **Status** = Design / Stub / Implemented / Blocked.
 - **Priority** = P0 (critical path) → P3 (can wait).
 
+Architecture backlog: [open-work.md](./open-work.md) · Session record: [architecture-session-2026-08.md](./architecture-session-2026-08.md)
+
 ---
 
 ## Core Engine
@@ -50,10 +52,14 @@
 | Component | Depends on | Status | Priority | Tech / Notes |
 |-----------|------------|--------|----------|--------------|
 | Bishop being-profile births | Bishop factory | Designed | P1 | External repo; Favor consumes |
+| Registry role pinning (`primary_role`) | Bishop AGENT_ROLES | Documented | P1 | [bishop-birth-roles.md](./bishop-birth-roles.md) |
 | Favor steward map | Agent platform + senses | Designed | P1 | [favor-stewards.md](./favor-stewards.md) |
 | Senses → consciousness templates | Being profile | Designed | P1 | [senses-architecture.md](./senses-architecture.md) |
 | Instrument rack mounts | Instruments library + producers | Designed | P1 | [instrument-rack.md](./instrument-rack.md) |
-| Moment Matrix consumption contracts | nephew/moment-matrix | Designed | P1 | Counsel vs authority |
+| Moment Matrix package (nephew) | SNF profiles | Implemented (external) | P0 | `@nephew/moment-matrix` |
+| Favor Matrix adapter + claim path | nephew package | Designed | P1 | [favor-moment-matrix.md](./favor-moment-matrix.md) |
+| Microslice solvency stencil gate | Formula doctrine | Documented | P1 | [microslice-solvency-formula.md](./microslice-solvency-formula.md) |
+| Kingdom targeted counsel (optional) | philosophy-kingdoms | Documented | P2 | [kingdom-houses.md](./kingdom-houses.md) — counsel only |
 | SCORE-NAMESPACES compliance | SNF contract | Documented | P0 | [score-namespaces.md](./score-namespaces.md) |
 | Device plugins (camera, biometrics, haptics) | Capacitor / Unity | Designed | P1 | Instrument inputs only |
 | Mood / Mode of Expression instruments | Moment Matrix profiles | Built (Media Resolver) | P1 | Counsel only |
@@ -63,11 +69,12 @@
 | Component | Depends on | Status | Priority | Tech / Notes |
 |-----------|------------|--------|----------|--------------|
 | Favor creation & P-more record | — | Designed | P0 | Schema + storage |
+| Claim stencil UI | Matrix adapter | Designed | P1 | Fill V/N/D/Q/T gaps |
 | Voting UI (YONAW form) | YONAW scoring, voice credits, IdentityScore | Not started | P0 | Electron / Capacitor |
 | Review threshold & Why privacy | Aggregation | Designed | P1 | Hide until 13 reviews |
 | Tip receipt handling | Aggregation (high score path) | Designed | P1 | Manual → zkTLS later |
-| Ready Play UI | Rating engines + seasons | Not started | P1 | |
-| Scoreboard Studio UI | All scores | Not started | P1 | |
+| Ready Play UI | Rating engines + seasons | Not started | P1 | No Matrix axes in ladder |
+| Scoreboard Studio UI | All scores | Not started | P1 | Optional Matrix panel |
 | Honor contracts | P-more record | Designed | P2 | Link to Approval Engine |
 | Marketplace / IOU | P-more + reputation | Designed | P2 | |
 | Unity network map (2D/3D) | Reach graph | High-level | P2 | Embedded in shell only |
@@ -80,6 +87,7 @@
 | User / identity store | — | Not started | P0 | |
 | Favor + vote store | — | Not started | P0 | |
 | Nullifier + reputation event store | — | Not started | P0 | |
+| moment_observation store (optional) | Matrix adapter | Not started | P1 | moment_id + hash |
 | Ready Play rating store | Rating engines | Not started | P1 | |
 | API layer | Stores + core engine | Not started | P0 | |
 | Auth | IdentityScore / optional PoP | Not started | P0 | |
@@ -103,10 +111,10 @@
    Electron/Capacitor shell around the working voting flow; Unity embed for map later.
 
 6. **P1 agent + measurement**  
-   Steward births via Bishop → instrument rack mounts → Moment Matrix counsel contracts (no permission laundering).
+   Favor Matrix adapter + claim stencil UI → steward births via Bishop with explicit roles → instrument rack mounts (no permission laundering).
 
-7. **P2 leverage surfaces**  
-   Reach graph → Unity map → marketplace / honor contracts → TrueSkill 2 if team leagues demand it.
+7. **P2 leverage + counsel depth**  
+   Reach graph → Unity map → marketplace / honor contracts → optional targeted Kingdom routes → TrueSkill 2 if team leagues demand it.
 
 ## External Dependencies (Expected)
 
@@ -118,11 +126,12 @@
 | `poseidon-lite` or circuit Poseidon | Nullifier & commitments | Must match circuit |
 | Unity | Network map | Embedded 2D + 3D |
 | Electron + Capacitor | App shell | |
-| Bishop (external) | Durable agent birth | Being profiles |
-| nephew/moment-matrix | Utterance multi-axis scores | Counsel + policy axis |
+| Bishop (external) | Durable agent birth | Being profiles + AGENT_ROLES |
+| `@nephew/moment-matrix` | Utterance multi-axis scores | Counsel + policy axis |
+| philosophy-kingdoms / SNF | Optional counsel routes | Not Favor runtime authority |
 | Postgres (or equivalent) | Primary store | Lean |
 | Optional: World ID / zkPassport | PoP boost | |
 
 ---
 
-*This table is the engineering source of truth for sequencing work. Update status as components move from Designed → Stub → Implemented. Architecture backlog: [open-work.md](./open-work.md).*
+*This table is the engineering source of truth for sequencing work. Update status as components move from Designed → Stub → Implemented.*

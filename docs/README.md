@@ -1,9 +1,11 @@
 # Documentation Index
 
+**Session record:** [Architecture Session 2026-08](./architecture-session-2026-08.md) — full inventory of design work landed this pass.
+
 ## Core Product
-- [Technical Specification v0.3](./tech-spec.md) — system overview, components, data flows, open decisions
+- [Technical Specification v0.4](./tech-spec.md) — system overview, components, data flows, open decisions
 - [Engineering Dependency Table](./dependency-table.md) — what depends on what, status, build order
-- [Open Work](./open-work.md) — consolidated architecture backlog (agents, senses, rack, matrix, shell)
+- [Open Work](./open-work.md) — consolidated architecture backlog
 - [Scoreboard](./scoreboard.md) — all scores in the system and how they relate
 - [Scoreboard Studio](./scoreboard-studio.md) — control panel & display layer for every score
 - [YONAW Voting Algorithm](./yonaw-algorithm.md) — community valuation mechanism
@@ -41,4 +43,4 @@
 - [Semaphore Circuits](./semaphore-circuits.md) — inputs, constraints, YONAW external-nullifier convention
 - [Merkle Tree Membership Proofs](./merkle-membership.md) — efficient group membership proofs
 
-These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, Bishop birth roles, Kingdom houses counsel pipeline, senses mapping, instrument rack, Moment Matrix, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
+These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, Bishop birth roles, Kingdom houses counsel pipeline, senses mapping, instrument rack, Moment Matrix, Microslice Solvency Formula, and measurement instruments researched across the Semantic Node Framework and Media Resolver.

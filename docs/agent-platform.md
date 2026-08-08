@@ -16,6 +16,9 @@ Repo: `marvelousempire/bishop` (Gitea org `bishop` = Agent Factory layer).
 - Required **being profile** (manifest v1.3+) for every durable agent:
   - skills, rules, capabilities, talents
   - soul, philosophy, consciousness, emotion, tone
+- **Registry roles** (`primary_role` / `secondary_roles`): fourteen values — see [bishop-birth-roles.md](./bishop-birth-roles.md)
+- **Interaction class**: operator_interactive | tool_executing | background
+- Birth posture: detect → recommend → remediate (remediate only after commission)
 - Bootstrap birth runtime (`scripts/bootstrap_birth.py`) — validate + preview only; durable birth is explicit
 - Creation Packs, staff cards, supervision, retirement justification
 - Truth boundary: a being profile does **not** grant authority; permissions and Boss Moves stay separate
@@ -36,6 +39,10 @@ Repo: `marvelousempire/optimus-nephew`
 
 Repo: `marvelousempire/nephew` — orchestrator, doors, cassettes, forge taxonomy (Doctrine = nephew org, Agent Factory = bishop org). Includes cornerstone package `moment-matrix/`.
 
+### Kingdom houses (counsel axis — not registry roles)
+
+Seven-house reasoning pipeline + six contrasting pairs. Output is **counsel**. See [kingdom-houses.md](./kingdom-houses.md). Do not set a steward’s `primary_role` to a House number.
+
 ---
 
 ## Direction change (operator intent)
@@ -51,7 +58,7 @@ Operator intent
 Optimus Nephew (law, philosophy, score ledgers, product schema)
       │
       ▼
-Bishop Factory (birth durable agents with being profiles)
+Bishop Factory (birth durable agents with being profiles + primary_role)
       │
       ├── consciousness ← senses channels (what may be noticed)
       ├── emotion / tone ← posture only
@@ -67,6 +74,8 @@ Nephew runtime + product consoles (Favor, ReadyPlay, Briefcase, …)
       ├── Capacitor (mobile)
       └── Unity (embedded spatial only)
 ```
+
+Optional: targeted **Kingdom** pair ballots as counsel on hard decisions — never as permission.
 
 ---
 
@@ -87,7 +96,7 @@ Hard boundary:
 | Senses | [Senses Architecture](./senses-architecture.md) + [Instrument Rack](./instrument-rack.md) |
 | Attention | consciousness field + routing confidence |
 | Mood / posture | emotion + tone; affect.* counsel only |
-| Health / readiness | solvency / operational scores; never soul score |
+| Health / readiness | solvency stencil / operational scores; never soul score |
 | Growth | skills + talents + versioned Creation Packs |
 
 ---
@@ -95,8 +104,8 @@ Hard boundary:
 ## How Favor uses this
 
 - Favor does **not** invent its own agent factory.
-- Specialist agents are listed in [Favor Stewards](./favor-stewards.md) and born via **Bishop** when durable roles are justified.
-- Measurement instruments and Moment Matrix remain counsel/measurement layers under SCORE-NAMESPACES law.
+- Specialist agents are listed in [Favor Stewards](./favor-stewards.md) and born via **Bishop** when durable roles are justified — with explicit registry roles from [Bishop Birth Roles](./bishop-birth-roles.md).
+- Measurement: [Favor Moment Matrix](./favor-moment-matrix.md), [Instrument Rack](./instrument-rack.md), [Microslice Solvency Formula](./microslice-solvency-formula.md).
 - Desktop/mobile surface is Electron + Capacitor; Unity only for spatial/game surfaces.
 - Agents act through policy and witnesses, not through emotion scores.
 
@@ -106,10 +115,11 @@ Hard boundary:
 
 See consolidated [Open Work](./open-work.md). Highlights:
 
-1. Map and birth Favor stewards (map, review, marketplace, reputation first).
-2. Align consciousness with Moment Matrix namespaces (counsel only).
-3. Device-sense plugins as instrument inputs, not authority.
-4. Continue Electron/Capacitor shell; Unity embed only for spatial map.
+1. Map and birth Favor stewards (map, review, marketplace, reputation first) with pinned `primary_role`.
+2. Favor Matrix adapter + claim stencil UI.
+3. Align consciousness with Moment Matrix namespaces (counsel only).
+4. Device-sense plugins as instrument inputs, not authority.
+5. Continue Electron/Capacitor shell; Unity embed only for spatial map.
 
 ---
 
@@ -117,4 +127,4 @@ See consolidated [Open Work](./open-work.md). Highlights:
 
 - Bishop: `docs/agent-being-profile.md`, `docs/agent-birth-canal.md`
 - Optimus Nephew: `README.md`, `docs/WHAT-WE-ARE-BUILDING.md`
-- Favor: [Desktop Stack](./desktop-stack.md), [Senses Architecture](./senses-architecture.md), [Instrument Rack](./instrument-rack.md), [Moment Matrix](./moment-matrix.md), [Favor Stewards](./favor-stewards.md), [Score Namespaces](./score-namespaces.md), [Open Work](./open-work.md)
+- Favor: [Bishop Birth Roles](./bishop-birth-roles.md), [Kingdom Houses](./kingdom-houses.md), [Desktop Stack](./desktop-stack.md), [Senses Architecture](./senses-architecture.md), [Instrument Rack](./instrument-rack.md), [Moment Matrix](./moment-matrix.md), [Favor Moment Matrix](./favor-moment-matrix.md), [Favor Stewards](./favor-stewards.md), [Score Namespaces](./score-namespaces.md), [Open Work](./open-work.md), [Architecture Session](./architecture-session-2026-08.md)

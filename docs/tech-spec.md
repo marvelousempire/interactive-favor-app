@@ -1,4 +1,4 @@
-# Interactive Favor App (P-more) — Technical Specification v0.3
+# Interactive Favor App (P-more) — Technical Specification v0.4
 
 ## 1. System Overview
 
@@ -6,7 +6,7 @@ The Favor app turns real-world favors into tradable non-fungible credits called 
 
 An optional competitive layer (**Ready Play**) lets users opt into ranked leagues powered by pluggable rating engines (Elo, Glicko-2, hybrid, future TrueSkill 2). **Scoreboard Studio** is the control panel for every score in the system.
 
-**Agent direction:** Favor does not invent a god-agent. Durable specialists are born through **Bishop** with being profiles. **Optimus Nephew** is law/manifest. **Nephew** is runtime. Measurement flows through the **instrument rack** and **Moment Matrix** under SCORE-NAMESPACES law (scores counsel; policy authorizes).
+**Agent direction:** Favor does not invent a god-agent. Durable specialists are born through **Bishop** with being profiles and explicit registry **primary_role** values. **Optimus Nephew** is law/manifest. **Nephew** is runtime. Measurement flows through the **instrument rack** and **Moment Matrix** under SCORE-NAMESPACES law (scores counsel; policy authorizes). Optional **Kingdom** routes provide contrasting counsel only.
 
 ### Core Loop
 1. User performs a favor.
@@ -15,6 +15,8 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 4. Voters spend quadratic voice credits to signal intensity.
 5. Reputation scores (Performance, Credibility, Reach, Y-score) update; optional Ready Play rating updates if the user is in a league.
 6. Credits can be redeemed, traded, or used as leverage in the network.
+
+**Counsel path (parallel, never permission):** claim/review text may be scored by Moment Matrix (stencil + axes); stewards may read instrument mounts; high-stakes product decisions may request targeted Kingdom pairs.
 
 ## 2. Major Components
 
@@ -29,6 +31,7 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 - Scoring: qualitative strength × intensity factor × Credibility weight.
 - Aggregation produces a 0–100 favor value.
 - High values (≥ 90) that claim a tip require a verifiable receipt.
+- Moment Matrix affect axes must **not** multiply vote power.
 
 ### 2.3 Quadratic Voice Credits
 - Equal base budget (recommended: 100 credits per favor).
@@ -62,12 +65,14 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 - Opt-in ranked leagues / ladders / team challenges.
 - Pluggable engines: Elo, Glicko-2 (default for 1v1), Elo+μ/σ hybrid; TrueSkill 2 documented for future team use.
 - Separate from core Reputation; seasonal resets do not wipe Performance / Y-score.
+- Moment Matrix axes are **excluded** from rating updates.
 - See [ready-play.md](./ready-play.md) and [rating-systems.md](./rating-systems.md).
 
 ### 2.8 Scoreboard Studio
 - Control panel and display layer for every score (core Reputation + Ready Play + derived quantities).
+- Optional Moment Matrix / Kingdom counsel panels — never averaged into a soul score.
 - Engine selector, confidence view (μ − 3σ / r − 2·RD), volatility lens, season browser, comparison mode.
-- Must not present a composite soul score. See [scoreboard-studio.md](./scoreboard-studio.md).
+- See [scoreboard-studio.md](./scoreboard-studio.md).
 
 ### 2.9 Gamified Network Map
 - Unity (2D + 3D) **embedded** inside Electron/Capacitor shell.
@@ -84,30 +89,37 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 - Trade / IOU of P-more credits.
 - Private honor contracts with optional notarization via Approval Engine.
 - Leverage game: strategic network position is rewarded.
+- Claim completeness guided by Microslice Solvency Formula / Matrix stencil ([microslice-solvency-formula.md](./microslice-solvency-formula.md)).
 
 ### 2.12 Agent Platform (Bishop + Optimus + Nephew)
-- Bishop: sole durable-agent factory; being profile required (consciousness, emotion, tone, …).
+- Bishop: sole durable-agent factory; being profile required; **primary_role** from fourteen registry roles.
 - Optimus Nephew: law, philosophies, Motif product schema.
 - Nephew: runtime + `moment-matrix` package.
 - Favor stewards (map, review, marketplace, reputation, …) born via Bishop when justified.
-- See [agent-platform.md](./agent-platform.md), [favor-stewards.md](./favor-stewards.md), [senses-architecture.md](./senses-architecture.md).
+- See [agent-platform.md](./agent-platform.md), [bishop-birth-roles.md](./bishop-birth-roles.md), [favor-stewards.md](./favor-stewards.md), [senses-architecture.md](./senses-architecture.md).
 
 ### 2.13 Instrument Rack & Moment Matrix
 - Instrument rack: producers → instruments → mounts → consumers; missing ≠ 0.
 - Moment Matrix: multi-axis utterance scoring at place + time; policy authorizes; no soul score.
-- See [instrument-rack.md](./instrument-rack.md), [moment-matrix.md](./moment-matrix.md), [score-namespaces.md](./score-namespaces.md).
+- Favor consumption contracts: [favor-moment-matrix.md](./favor-moment-matrix.md).
+- See also [instrument-rack.md](./instrument-rack.md), [moment-matrix.md](./moment-matrix.md), [score-namespaces.md](./score-namespaces.md).
 
-### 2.14 Backend & Storage (Open)
-- User profiles, favor records, votes, nullifier sets, reputation history, Ready Play ratings.
+### 2.14 Kingdom Houses (optional counsel)
+- Seven-house pipeline; six contrasting pairs; House 7 synthesis under real policy authority.
+- Targeted routing for hard product decisions; full-court exceptional.
+- See [kingdom-houses.md](./kingdom-houses.md), [solvency-house.md](./solvency-house.md).
+
+### 2.15 Backend & Storage (Open)
+- User profiles, favor records, votes, nullifier sets, reputation history, Ready Play ratings, optional moment_observation ids.
 - Decision pending: pure off-chain + signed attestations vs hybrid with on-chain anchoring.
 
 ## 3. Data Flows (High Level)
 
-**Favor creation** → P-more record → voting window opens  
+**Favor creation** → optional Matrix score on description → stencil gate / clarify → P-more record → voting window opens  
 **Vote submission** → IdentityScore check → voice-credit spend → YONAW score → optional Semaphore proof + nullifier → aggregation  
 **Aggregation complete** → favor value locked → Performance / Credibility / Y-score updates → Reach map may update  
 **(If Ready Play)** → rating engine update → Ready Play scoreboard  
-**(Counsel path)** → Moment Matrix / instrument rack readings → steward consciousness (never permission)  
+**(Counsel path)** → Moment Matrix / instrument rack readings → steward consciousness; optional Kingdom ballots (never permission)  
 **Redemption / trade** → marketplace or honor-contract flow
 
 ## 4. Open Technical Decisions
@@ -123,6 +135,7 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 | Ready Play default engine | Glicko-2 vs hybrid vs TrueSkill 2 | Glicko-2 for 1v1; TrueSkill 2 later for teams |
 | Performance decay | Half-life vs window vs activity-triggered step | Activity-triggered mild half-life |
 | Agent birth priority | Which stewards first | Map, review, marketplace, reputation |
+| Kingdom routing in Favor | None vs targeted pairs | Targeted only when product policy needs contrast |
 
 ## 5. Security & Integrity Priorities
 
@@ -132,7 +145,7 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 4. Chain-of-responsibility liability for Credibility.
 5. Receipt requirement for extreme high scores.
 6. Ready Play anti-gaming (abandon = loss, IdentityScore gates, volatility dampening).
-7. No score-to-permission laundering (SCORE-NAMESPACES / instrument rack law).
+7. No score-to-permission laundering (SCORE-NAMESPACES / instrument rack / Matrix law).
 
 ## 6. Implementation Status (Snapshot)
 
@@ -151,10 +164,12 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 | Network map (Unity) | High-level | Not started | Embedded only |
 | Marketplace | High-level | Not started | |
 | App shell (Electron + Capacitor) | Designed | Scaffold | See desktop-stack |
-| Bishop steward births for Favor | Designed | Not started | favor-stewards.md |
+| Bishop steward births for Favor | Designed | Not started | favor-stewards + bishop-birth-roles |
 | Instrument rack mounts in Favor | Designed | Not started | instrument-rack.md |
-| Moment Matrix Favor consumption | Designed | Package in nephew | Counsel contracts TBD |
+| Moment Matrix package | Done (nephew) | External | scorePrompt |
+| Favor Matrix adapter + claim UI | Designed | Not started | favor-moment-matrix.md |
+| Kingdom targeted routes | Documented | Not started | Optional P2 |
 
 ## 7. Doc map
 
-See [docs/README.md](./README.md) and [open-work.md](./open-work.md).
+See [docs/README.md](./README.md), [open-work.md](./open-work.md), and [architecture-session-2026-08.md](./architecture-session-2026-08.md).

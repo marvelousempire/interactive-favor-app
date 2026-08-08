@@ -1,10 +1,12 @@
 # Open Work Backlog — Architecture Sessions 2026-08-07/08
 
-Consolidated gaps from agent platform, senses, instrument rack, Moment Matrix, and desktop stack work. Update status as items close.
+Consolidated gaps from agent platform, senses, instrument rack, Moment Matrix, Kingdom houses, solvency formula, and desktop stack work. Update status as items close.
+
+See also: [architecture-session-2026-08.md](./architecture-session-2026-08.md) · [dependency-table.md](./dependency-table.md)
 
 ---
 
-## P0 — Product foundation (existing critical path)
+## P0 — Product foundation (critical path)
 
 | Item | Notes |
 |------|-------|
@@ -12,6 +14,19 @@ Consolidated gaps from agent platform, senses, instrument rack, Moment Matrix, a
 | Wire IdentityScore into voice credits | |
 | Finish quadratic module + API | |
 | Voting UI path | Electron / Capacitor |
+| API layer + auth | |
+
+---
+
+## P1 — Favor Moment Matrix + solvency measurement
+
+| Item | Source doc | Notes |
+|------|------------|-------|
+| Adapter wrapping `@nephew/moment-matrix` `scorePrompt` | favor-moment-matrix.md | Do not fork engine |
+| Claim composer stencil checklist (V·N·D·Q·T) | microslice-solvency-formula.md | needs-information, not punish |
+| Persist `moment_id` + hash on favor/review records | favor-moment-matrix.md | Version EQ presets |
+| Improve offline Destination/Quality/Time extraction | upstream nephew | Honest incomplete until then |
+| SCORE-NAMESPACES compliance in Favor API responses | score-namespaces.md | Reject non-null composite_soul_score |
 
 ---
 
@@ -20,7 +35,10 @@ Consolidated gaps from agent platform, senses, instrument rack, Moment Matrix, a
 | Item | Source doc | Notes |
 |------|------------|-------|
 | Map Favor stewards to Bishop births | favor-stewards.md | Map, review, marketplace, reputation first |
+| Explicit `primary_role` on compose decisions | bishop-birth-roles.md | Do not rely on executor default |
+| Pin `hierarchy.boss` for Favor product line | bishop-birth-roles.md | |
 | Consciousness text per steward | senses-architecture.md | Use templates |
+| Birth posture detect→recommend only | bishop-birth-roles.md | No remediate tools initially |
 | Mount schema JSON (instrument rack) | instrument-rack.md | Shared Media Resolver + Favor |
 | Reading schema JSON | instrument-rack.md | Align with moment_observation |
 | Explicit Favor consumption contracts per instrument | instruments-library.md | counsel vs ranking input |
@@ -29,7 +47,7 @@ Consolidated gaps from agent platform, senses, instrument rack, Moment Matrix, a
 
 ---
 
-## P1 — Moment Matrix / instruments
+## P1 — Moment Matrix / instruments (measurement quality)
 
 | Item | Notes |
 |------|-------|
@@ -37,7 +55,6 @@ Consolidated gaps from agent platform, senses, instrument rack, Moment Matrix, a
 | Optional Plutchik overlay labels only | never replace continuous scores |
 | Build voice tone spectrum + speech pattern curve | signal family gaps |
 | Attention decay + proof-over-time curve | instruments-library gaps |
-| Improve offline stencil D/Q/T detection | engine limitation |
 | Scene Skout drift flags as Smell-channel mounts | senses-architecture |
 
 ---
@@ -52,13 +69,16 @@ Consolidated gaps from agent platform, senses, instrument rack, Moment Matrix, a
 
 ---
 
-## P2 — Later
+## P2 — Kingdom counsel + stewards later
 
 | Item | Notes |
 |------|-------|
+| Decide which Favor decisions warrant targeted Kingdom routes | kingdom-houses.md |
+| Pair 5 (Precision/Vision) for exact-vs-durable product questions | solvency-house.md |
+| Scoreboard Studio Matrix + optional Kingdom counsel panels | no composite |
 | Presence steward durable birth | biometrics permission contracts |
 | Ready Play steward | counsel only on ratings |
-| Scoreboard Studio rack presets without composite scores | |
+| YONAW / Ready Play stewards P2 after P1 four | favor-stewards.md |
 | WooCommerce / catalog SKUs for instrument products | Optimus / Motif path |
 | TrueSkill 2 engine | documented only |
 | Spiritual lens UX (operator-declared only) | |
@@ -72,13 +92,20 @@ Consolidated gaps from agent platform, senses, instrument rack, Moment Matrix, a
 - No composite soul score API
 - No literal nutrition chemistry for software agents
 - No affect/philosophy scores as automatic rank or payment authority
+- No Matrix axes as Ready Play match outcomes or quadratic multipliers
+- No twelve permanent agents for twelve Kingdom sides
+- No inventing registry roles outside the fourteen without SNF update
 
 ---
 
 ## Related
 
+- [Architecture Session 2026-08](./architecture-session-2026-08.md)
 - [Dependency Table](./dependency-table.md)
 - [Agent Platform](./agent-platform.md)
+- [Bishop Birth Roles](./bishop-birth-roles.md)
 - [Favor Stewards](./favor-stewards.md)
+- [Favor Moment Matrix](./favor-moment-matrix.md)
 - [Instrument Rack](./instrument-rack.md)
-- [Moment Matrix](./moment-matrix.md)
+- [Kingdom Houses](./kingdom-houses.md)
+- [Microslice Solvency Formula](./microslice-solvency-formula.md)
