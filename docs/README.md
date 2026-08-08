@@ -1,51 +1,57 @@
 # Documentation Index
 
-**Session record:** [Architecture Session 2026-08](./architecture-session-2026-08.md) — full inventory of design work landed this pass.  
-**Product framing (2026-08-08):** [What Favor Is](./favor-product.md) · [Verb / Noun Favors](./verb-noun-favors.md) · [Favor Barter & Solvency](./favor-barter-solvency.md)
+**Session record:** [Architecture Session 2026-08](./architecture-session-2026-08.md)  
+**Product framing:** [What Favor Is](./favor-product.md) · [Verb / Noun Favors](./verb-noun-favors.md) · [Favor Barter & Solvency](./favor-barter-solvency.md)  
+**Infrastructure:** [Atlas](./infrastructure-atlas.md) · [ops](./ops/README.md) · [GitTalk Sync](./gittalk-sync.md)
 
 ## Core Product
-- [What Favor Is — Product Definition](./favor-product.md) — social-capital ledger, butterfly-net framing, not a chore marketplace
-- [Verb Favors and Noun Favors](./verb-noun-favors.md) — action vs provision taxonomy + UI tabs
-- [Favor Barter and Solvency](./favor-barter-solvency.md) — cash + favor settlement, escrow alternative, proposed-favors catalog, proof rules
-- [Technical Specification v0.4](./tech-spec.md) — system overview, components, data flows, open decisions
-- [Engineering Dependency Table](./dependency-table.md) — what depends on what, status, build order
-- [Open Work](./open-work.md) — consolidated architecture backlog
-- [Scoreboard](./scoreboard.md) — all scores in the system and how they relate
-- [Scoreboard Studio](./scoreboard-studio.md) — control panel & display layer for every score
-- [YONAW Voting Algorithm](./yonaw-algorithm.md) — community valuation mechanism
-- [Y-score](./y-score.md) — reputation volatility definition and parameters
-- [Reputation Decay](./reputation-decay.md) — linear, exponential, half-life, step, window options
-- [Quadratic Voting Exploration](./quadratic-voting.md) — intensity layer + recommended hybrid
+- [What Favor Is — Product Definition](./favor-product.md)
+- [Verb Favors and Noun Favors](./verb-noun-favors.md)
+- [Favor Barter and Solvency](./favor-barter-solvency.md)
+- [Technical Specification v0.4](./tech-spec.md)
+- [Engineering Dependency Table](./dependency-table.md)
+- [Infrastructure Atlas](./infrastructure-atlas.md) — MacBook, DGX Spark, DXP6800, Electron pipeline
+- [GitTalk Sync](./gittalk-sync.md) — forge handoffs and home/mirror synchronization
+- [Open Work](./open-work.md)
+- [Scoreboard](./scoreboard.md)
+- [Scoreboard Studio](./scoreboard-studio.md)
+- [YONAW Voting Algorithm](./yonaw-algorithm.md)
+- [Y-score](./y-score.md)
+- [Reputation Decay](./reputation-decay.md)
+- [Quadratic Voting Exploration](./quadratic-voting.md)
 
 ## Competitive / Ranking
-- [Rating Systems](./rating-systems.md) — full variety (Elo, Glicko-2, TrueSkill, hybrid, …)
-- [Glicko-2](./glicko-2.md) — formulas, comparison, Favor mapping
-- [TrueSkill 2](./trueskill-2.md) — features, mechanics, measured impact
-- [Ready Play](./ready-play.md) — optional ranked / competitive layer
+- [Rating Systems](./rating-systems.md)
+- [Glicko-2](./glicko-2.md)
+- [TrueSkill 2](./trueskill-2.md)
+- [Ready Play](./ready-play.md)
 
 ## Client Architecture
-- [Desktop Stack](./desktop-stack.md) — Electron foundation, Capacitor mobile twin, Unity embedded layer, WordPress backend engine
-- [Agent Platform](./agent-platform.md) — Bishop Factory + Optimus Nephew fusion; being profiles; multi-agent direction
-- [Bishop Birth Roles](./bishop-birth-roles.md) — role registry, interaction class, capability posture, Favor steward mapping
-- [Favor Stewards](./favor-stewards.md) — which roles deserve durable Bishop births + consciousness templates
-- [Senses Architecture](./senses-architecture.md) — five-sense channels mapped onto BeingProfile consciousness and instrument rack
-- [Kingdom Houses](./kingdom-houses.md) — 7-house reasoning pipeline, 6 contrasting pairs, counsel vs authority
-- [Solvency House](./solvency-house.md) — House 5 Precision/Vision counsel
-- [Microslice Solvency Formula](./microslice-solvency-formula.md) — Verb·Noun·Destination·Quality·Time stencil, weights, ≥0.90 gate
+- [Desktop Stack](./desktop-stack.md)
+- [Infrastructure Atlas](./infrastructure-atlas.md)
+- [ops runbooks](./ops/README.md)
+- [Agent Platform](./agent-platform.md)
+- [Bishop Birth Roles](./bishop-birth-roles.md)
+- [Favor Stewards](./favor-stewards.md)
+- [Senses Architecture](./senses-architecture.md)
+- [Kingdom Houses](./kingdom-houses.md)
+- [Solvency House](./solvency-house.md)
+- [Microslice Solvency Formula](./microslice-solvency-formula.md)
+
+## Marketplace & i18n
+- [Dokan Marketplace](./dokan-marketplace.md)
 
 ## Measurement Instruments & Lived Meaning
-- [Instrument Rack](./instrument-rack.md) — rack layers, mounts, read contract, missing-data, senses attachment, Favor consumption
-- [Instruments Library](./instruments-library.md) — measurement shapes, families, shipped instruments, productization path
-- [Moment Matrix](./moment-matrix.md) — multi-axis measurement design (engine, schema, profiles, hard laws)
-- [Favor Moment Matrix](./favor-moment-matrix.md) — product consumption contracts, claim path, steward wiring, non-goals
-- [Score Namespaces](./score-namespaces.md) — Favor-side SCORE-NAMESPACES contract summary
-- [Emotion Modeling](./emotion-modeling.md) — VAD, Plutchik wheel, valence–arousal mapping, sentiment model comparison
-- [Session closeout — Moment Matrix stencil](./session-closeout-moment-matrix-stencil-2026-08-08.md) — upstream extractor status
+- [Instrument Rack](./instrument-rack.md)
+- [Instruments Library](./instruments-library.md)
+- [Moment Matrix](./moment-matrix.md)
+- [Favor Moment Matrix](./favor-moment-matrix.md)
+- [Score Namespaces](./score-namespaces.md)
+- [Emotion Modeling](./emotion-modeling.md)
+- [Session closeout — Moment Matrix stencil](./session-closeout-moment-matrix-stencil-2026-08-08.md)
 
 ## Privacy & Sybil Resistance
-- [Zero-Knowledge Proofs](./zero-knowledge.md) — overview and integration path
-- [Semaphore Nullifier Mechanics](./semaphore-nullifiers.md) — uniqueness without identity reveal
-- [Semaphore Circuits](./semaphore-circuits.md) — inputs, constraints, YONAW external-nullifier convention
-- [Merkle Tree Membership Proofs](./merkle-membership.md) — efficient group membership proofs
-
-These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the product definition (social-capital ledger, verb/noun favors, barter solvency), desktop stack, agent factory direction, Bishop birth roles, Kingdom houses counsel pipeline, senses mapping, instrument rack, Moment Matrix, Microslice Solvency Formula, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
+- [Zero-Knowledge Proofs](./zero-knowledge.md)
+- [Semaphore Nullifier Mechanics](./semaphore-nullifiers.md)
+- [Semaphore Circuits](./semaphore-circuits.md)
+- [Merkle Tree Membership Proofs](./merkle-membership.md)
