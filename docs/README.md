@@ -1,7 +1,7 @@
 # Documentation Index
 
 ## Core Product
-- [Technical Specification v0.2](./tech-spec.md) — system overview, components, data flows, open decisions
+- [Technical Specification v0.3](./tech-spec.md) — system overview, components, data flows, open decisions
 - [Engineering Dependency Table](./dependency-table.md) — what depends on what, status, build order
 - [Open Work](./open-work.md) — consolidated architecture backlog (agents, senses, rack, matrix, shell)
 - [Scoreboard](./scoreboard.md) — all scores in the system and how they relate
@@ -20,6 +20,7 @@
 ## Client Architecture
 - [Desktop Stack](./desktop-stack.md) — Electron foundation, Capacitor mobile twin, Unity embedded layer, WordPress backend engine
 - [Agent Platform](./agent-platform.md) — Bishop Factory + Optimus Nephew fusion; being profiles; multi-agent direction
+- [Bishop Birth Roles](./bishop-birth-roles.md) — role registry, interaction class, capability posture, Favor steward mapping
 - [Favor Stewards](./favor-stewards.md) — which roles deserve durable Bishop births + consciousness templates
 - [Senses Architecture](./senses-architecture.md) — five-sense channels mapped onto BeingProfile consciousness and instrument rack
 
@@ -36,4 +37,4 @@
 - [Semaphore Circuits](./semaphore-circuits.md) — inputs, constraints, YONAW external-nullifier convention
 - [Merkle Tree Membership Proofs](./merkle-membership.md) — efficient group membership proofs
 
-These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, senses mapping, instrument rack, Moment Matrix, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
+These documents capture the design and sequencing decisions for the Interactive Favor App (P-more), including the desktop stack, agent factory direction, Bishop birth roles, senses mapping, instrument rack, Moment Matrix, and measurement instruments researched across the Semantic Node Framework and Media Resolver.
