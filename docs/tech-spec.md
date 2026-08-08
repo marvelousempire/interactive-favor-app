@@ -1,15 +1,17 @@
-# Interactive Favor App (P-more) — Technical Specification v0.1
+# Interactive Favor App (P-more) — Technical Specification v0.2
 
 ## 1. System Overview
 
 The Favor app turns real-world favors into tradable non-fungible credits called **P-more** (Perceived Moment of Real Energy). Value is assigned by structured community voting (YONAW), intensity is expressed via quadratic voice credits, and Sybil resistance + privacy are provided by progressive IdentityScore and optional Semaphore / zero-knowledge proofs.
+
+An optional competitive layer (**Ready Play**) lets users opt into ranked leagues powered by pluggable rating engines (Elo, Glicko-2, hybrid, future TrueSkill 2). **Scoreboard Studio** is the control panel for every score in the system.
 
 ### Core Loop
 1. User performs a favor.
 2. A P-more credit (NFT or NFT-like record) is created.
 3. Community values it via YONAW (Yes/No + Why + Light/Mixed/Dark tiers + contextual variable).
 4. Voters spend quadratic voice credits to signal intensity.
-5. Reputation scores (Performance, Credibility, Reach, Y-score) update.
+5. Reputation scores (Performance, Credibility, Reach, Y-score) update; optional Ready Play rating updates if the user is in a league.
 6. Credits can be redeemed, traded, or used as leverage in the network.
 
 ## 2. Major Components
@@ -17,7 +19,7 @@ The Favor app turns real-world favors into tradable non-fungible credits called 
 ### 2.1 P-more Credit Layer
 - Represents a completed favor as a unique, non-fungible credit.
 - Carries original intent, performer, timestamps, and community-assigned value.
-- Open decision: on-chain NFT (ERC-721/1155 or equivalent) vs signed off-chain attestation with optional anchoring.
+- Open decision: on-chain NFT vs signed off-chain attestation with optional anchoring.
 
 ### 2.2 YONAW Voting Engine
 - **Location**: `src/yonaw/`
@@ -30,13 +32,15 @@ The Favor app turns real-world favors into tradable non-fungible credits called 
 - Equal base budget (recommended: 100 credits per favor).
 - Cost of intensity is quadratic; effective factor ≈ √(credits spent).
 - Credits burn at end of voting window.
-- Final vote power = qualitative strength × √credits × (Credibility / 100).
+- Final vote power = qualitative strength × √credits × (Credibility / 100) × IdentityScore factor.
 
 ### 2.4 Reputation System
+- **Location**: `src/reputation/`
 - **Performance** — delivery quality of favors performed.
 - **Credibility** — accuracy of reviews + chain-of-responsibility (20 % decay per hop, max 5 hops).
 - **Reach** — network leverage, visualized as a Dune-style fog-of-war map.
-- **Y-score** — reputation volatility (starts at 0, moves in ±0.1 / ±0.2 increments).
+- **Y-score** — reputation volatility (MAD Z-score + IQR hybrid, range [−5, +5], discrete decay toward 0).
+- Decay options documented in [reputation-decay.md](./reputation-decay.md).
 
 ### 2.5 Sybil Resistance / IdentityScore
 - **Location**: `src/sybil/`
@@ -51,23 +55,35 @@ The Favor app turns real-world favors into tradable non-fungible credits called 
 - Merkle tree of identity commitments for group membership proofs.
 - Future: private Why text, selective disclosure of reputation claims, zkTLS tip receipts.
 
-### 2.7 Gamified Network Map
+### 2.7 Ready Play (Competitive Layer)
+- **Location**: docs + `src/rating/`
+- Opt-in ranked leagues / ladders / team challenges.
+- Pluggable engines: Elo, Glicko-2 (default for 1v1), Elo+μ/σ hybrid; TrueSkill 2 documented for future team use.
+- Separate from core Reputation; seasonal resets do not wipe Performance / Y-score.
+- See [ready-play.md](./ready-play.md) and [rating-systems.md](./rating-systems.md).
+
+### 2.8 Scoreboard Studio
+- Control panel and display layer for every score (core Reputation + Ready Play + derived quantities).
+- Engine selector, confidence view (μ − 3σ / r − 2·RD), volatility lens, season browser, comparison mode.
+- See [scoreboard-studio.md](./scoreboard-studio.md).
+
+### 2.9 Gamified Network Map
 - Unity (2D + 3D).
 - Map starts dark; working with new people reveals territory (Reach).
 - Visualizes leverage and relationship weight.
 
-### 2.8 App Shell
+### 2.10 App Shell
 - Cross-platform: Electron + Capacitor.
 - Native iOS polish: Swift.
 - Shared business logic in TypeScript where possible.
 
-### 2.9 Marketplace & Honor Contracts
+### 2.11 Marketplace & Honor Contracts
 - Trade / IOU of P-more credits.
 - Private honor contracts with optional notarization via Approval Engine.
 - Leverage game: strategic network position is rewarded.
 
-### 2.10 Backend & Storage (Open)
-- User profiles, favor records, votes, nullifier sets, reputation history.
+### 2.12 Backend & Storage (Open)
+- User profiles, favor records, votes, nullifier sets, reputation history, Ready Play ratings.
 - Decision pending: pure off-chain + signed attestations vs hybrid with on-chain anchoring.
 
 ## 3. Data Flows (High Level)
@@ -75,6 +91,7 @@ The Favor app turns real-world favors into tradable non-fungible credits called 
 **Favor creation** → P-more record → voting window opens  
 **Vote submission** → IdentityScore check → voice-credit spend → YONAW score → optional Semaphore proof + nullifier → aggregation  
 **Aggregation complete** → favor value locked → Performance / Credibility / Y-score updates → Reach map may update  
+**(If Ready Play)** → rating engine update → Ready Play scoreboard  
 **Redemption / trade** → marketplace or honor-contract flow
 
 ## 4. Open Technical Decisions
@@ -87,6 +104,8 @@ The Favor app turns real-world favors into tradable non-fungible credits called 
 | Voice-credit refresh | Per-favor vs daily pool | Per-favor |
 | Unity map data source | Local graph vs backend graph service | Backend graph service |
 | Tip receipt verification | Manual upload vs zkTLS / payment provider webhooks | Start manual, add zkTLS later |
+| Ready Play default engine | Glicko-2 vs hybrid vs TrueSkill 2 | Glicko-2 for 1v1; TrueSkill 2 later for teams |
+| Performance decay | Half-life vs window vs activity-triggered step | Activity-triggered mild half-life |
 
 ## 5. Security & Integrity Priorities
 
@@ -95,16 +114,22 @@ The Favor app turns real-world favors into tradable non-fungible credits called 
 3. Review gaming (synonym shuffling, hidden weights, 13-review threshold).
 4. Chain-of-responsibility liability for Credibility.
 5. Receipt requirement for extreme high scores.
+6. Ready Play anti-gaming (abandon = loss, IdentityScore gates, volatility dampening).
 
 ## 6. Implementation Status (Snapshot)
 
 | Component | Design | Code | Notes |
 |-----------|--------|------|-------|
-| YONAW scoring | Done | Done (`src/yonaw/`) | Pure functions, ready for integration |
+| YONAW scoring | Done | Done (`src/yonaw/`) | Pure functions |
 | Quadratic credits | Done | Partial | Logic described, not yet a dedicated module |
 | IdentityScore / Sybil | Done | Done (`src/sybil/`) | Ready |
 | Semaphore integration | Done | Stubs (`src/semaphore/`) | Needs real Poseidon + official packages |
-| Reputation updates | Designed | Not started | Depends on aggregation events |
+| Y-score | Done | Done (`src/reputation/yScore.ts`) | MAD + IQR + discrete decay |
+| Rating engines (Elo, Glicko-2, hybrid) | Done | Done (`src/rating/`) | Ready Play ready |
+| TrueSkill 2 engine | Documented | Not started | Heavy; use hybrid/Glicko for now |
+| Reputation update engine (Performance, Credibility) | Designed | Not started | Depends on aggregation events |
+| Ready Play seasons / matchmaking | Designed | Not started | Uses `src/rating/` |
+| Scoreboard Studio UI | Designed | Not started | |
 | Network map (Unity) | High-level | Not started | |
 | Marketplace | High-level | Not started | |
 | App shell | High-level | Scaffold only | |

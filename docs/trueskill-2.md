@@ -1,44 +1,46 @@
-# TrueSkill 2
+# TrueSkill 2 — Features & Mechanics
 
-Microsoft Research’s 2018 extension of classic TrueSkill. Keeps the same single-number skill interface while adding richer evidence from real online play.
+Microsoft Research extension of classic TrueSkill (2018). Keeps a single skill number compatible with existing matchmakers while improving how that skill is inferred.
 
-## Core Features
+## Key Features
 
-1. **Individual performance signals** — kills, deaths, score, etc. influence the update, not only final win/loss.
-2. **Quit = surrender** — leaving mid-match is treated as a loss for rating purposes.
-3. **Experience offset** — early matches produce systematic upward skill drift (capped ~200 matches).
+1. **Individual performance signals** — kills, deaths, score, etc. influence skill in addition to final win/loss.
+2. **Quit = surrender** — mid-match dropout is treated as a loss for rating purposes.
+3. **Experience-aware growth** — early matches in a mode produce a systematic upward skill drift (capped ~200 matches).
 4. **Squad / party bonus** — pre-made groups get an explicit coordination offset.
-5. **Cross-mode correlation** — skills in different modes share statistical strength.
-6. **Biased skill evolution** — random walk includes a small positive improvement bias.
-7. **Automatic parameter learning** — weights learned from historical match batches.
-8. **Online + batch modes** — live forward updates or full-history “TrueSkill Through Time”.
-
-## Base Model (Shared with Classic TrueSkill)
-
-Each player has latent skill:
-
-```
-skill_i ~ N(μ_i, σ_i²)
-perf_i  ~ N(skill_i, β²)
-```
-
-Team performance is typically the sum of member performances. Inference uses expectation propagation on a factor graph. Displayed rating is often the conservative estimate μ − 3σ.
+5. **Cross-mode correlation** — skills in different modes borrow strength from each other.
+6. **Biased skill evolution** — random walk includes a small positive improvement bias, especially early on.
+7. **Automatic parameter estimation** — weights learned from historical match batches.
+8. **Two modes** — online (forward-only) and batch / “TrueSkill Through Time”.
+9. **Backward-compatible output** — still emits one skill number with the same meaning as classic TrueSkill.
 
 ## Measured Impact
 
-On Halo 5 data: ~68% match-outcome prediction accuracy vs ~52% for classic TrueSkill.
+On Halo 5 data: ~68% historical outcome prediction accuracy vs ~52% for classic TrueSkill.
+
+## Core Mechanics (Summary)
+
+- Latent skill ~ N(μ, σ²); noisy performance ~ N(skill, β²).
+- Team performance aggregates member performances (+ optional squad offset).
+- Individual counts are modeled as noisy observations of the same performance.
+- Inference via expectation propagation on an expanded factor graph.
+- Displayed rating often μ − 3σ (conservative).
 
 ## Mapping to Favor / Ready Play
 
-| TrueSkill 2 feature | Favor analogue |
-|---------------------|----------------|
-| Individual stats | Weight by effort, tips, context |
+| Feature | Favor analogue |
+|---------|----------------|
+| Individual stats beyond win/loss | Weight quality by effort, tips, context |
 | Quit = surrender | Abandoned ranked favors count as losses |
-| Experience offset | New users move faster until history grows |
+| Experience offset | New users’ Ready Play ratings move faster |
 | Squad bonus | Future team-favor challenges |
 | Cross-mode correlation | Borrow strength across favor categories |
-| Explicit σ | Confidence band (cf. Glicko RD, Y-score) |
+| Explicit σ | Confidence band (see also Glicko RD, Y-score) |
 
 ## Status in Repo
 
-Documented. Full factor-graph engine not yet implemented. Lighter alternatives live in `src/rating/` (Glicko-2, Elo+μ/σ hybrid).
+- Documented here and in [rating-systems.md](./rating-systems.md).
+- Full factor-graph TrueSkill 2 engine is **not** implemented yet.
+- Lighter substitutes available: Glicko-2 and Elo+μ/σ hybrid in `src/rating/`.
+
+See also: [Ready Play](./ready-play.md) · [Rating systems](./rating-systems.md)
