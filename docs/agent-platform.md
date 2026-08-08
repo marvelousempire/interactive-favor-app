@@ -1,6 +1,6 @@
 # Agent Platform — Bishop Factory + Optimus Nephew Fusion
 
-**Status:** Synthesis from 2026-08-07 research + existing Bishop / Optimus Nephew repos.  
+**Status:** Synthesis from 2026-08-07/08 research + existing Bishop / Optimus Nephew repos.  
 **Intent:** Stop building one giant agent. Build the **way** that births many agents.
 
 ---
@@ -34,7 +34,7 @@ Repo: `marvelousempire/optimus-nephew`
 
 ### Nephew runtime
 
-Repo: `marvelousempire/nephew` — orchestrator, doors, cassettes, forge taxonomy (Doctrine = nephew org, Agent Factory = bishop org).
+Repo: `marvelousempire/nephew` — orchestrator, doors, cassettes, forge taxonomy (Doctrine = nephew org, Agent Factory = bishop org). Includes cornerstone package `moment-matrix/`.
 
 ---
 
@@ -53,8 +53,19 @@ Optimus Nephew (law, philosophy, score ledgers, product schema)
       ▼
 Bishop Factory (birth durable agents with being profiles)
       │
+      ├── consciousness ← senses channels (what may be noticed)
+      ├── emotion / tone ← posture only
+      └── capabilities ← act only under permission contracts
+      │
+      ▼
+Instrument rack (Media Resolver · Moment Matrix · device plugins)
+      │
       ▼
 Nephew runtime + product consoles (Favor, ReadyPlay, Briefcase, …)
+      │
+      ├── Electron (desktop)
+      ├── Capacitor (mobile)
+      └── Unity (embedded spatial only)
 ```
 
 ---
@@ -63,24 +74,20 @@ Nephew runtime + product consoles (Favor, ReadyPlay, Briefcase, …)
 
 Conversation direction: treat agent capability more like a living system that needs:
 
-- **Senses** — what the agent continuously notices (maps to Bishop `consciousness` + instrument inputs: camera, audio, biometrics, Moment Matrix affect, Media Resolver instruments)
-- **Nutrition / fuel** — data, compute budget, knowledge feeds, update cadence (operational readiness, not food chemistry as product requirement)
-- **Emotion posture** — already a required Bishop field; must stay counsel/posture, never permission
+- **Senses** — what the agent continuously notices (maps to Bishop `consciousness` + instrument inputs)
+- **Nutrition / fuel** — data, compute budget, knowledge feeds (operational readiness, not food chemistry)
+- **Emotion posture** — required Bishop field; counsel/posture only, never permission
 
-Hard boundary (already in Bishop docs):
+Hard boundary:
 
 > Emotion is an operating posture, not a claim that the software is biologically sentient.
 
-Any “biological” framing is **metaphor and capability checklist** for building richer agents, not a claim of organism-level life. Food/nutrient lists, if pursued, belong as research notes for human operator health or simulation scenarios — not as requirements to “feed” software agents.
-
-Practical fusion:
-
 | Biological metaphor | Existing stack slot |
 |---------------------|---------------------|
-| Senses | Instrument rack (Media Resolver) + device plugins (Capacitor/Unity) + Moment Matrix axes |
-| Attention | consciousness field in being profile + routing confidence |
-| Mood / posture | emotion + tone fields; affect.* scores (counsel only) |
-| Health / readiness | solvency / operational scores; never “soul score” |
+| Senses | [Senses Architecture](./senses-architecture.md) + [Instrument Rack](./instrument-rack.md) |
+| Attention | consciousness field + routing confidence |
+| Mood / posture | emotion + tone; affect.* counsel only |
+| Health / readiness | solvency / operational scores; never soul score |
 | Growth | skills + talents + versioned Creation Packs |
 
 ---
@@ -88,18 +95,21 @@ Practical fusion:
 ## How Favor uses this
 
 - Favor does **not** invent its own agent factory.
-- Specialist agents (reputation steward, marketplace steward, map steward, review steward) are born via **Bishop** when needed.
-- Measurement instruments and Moment Matrix remain counsel/measurement layers under Semantic Node Framework law.
-- Desktop/mobile surface (Electron + Capacitor + Unity) is the human interface; agents act through policy and witnesses, not through emotion scores.
+- Specialist agents are listed in [Favor Stewards](./favor-stewards.md) and born via **Bishop** when durable roles are justified.
+- Measurement instruments and Moment Matrix remain counsel/measurement layers under SCORE-NAMESPACES law.
+- Desktop/mobile surface is Electron + Capacitor; Unity only for spatial/game surfaces.
+- Agents act through policy and witnesses, not through emotion scores.
 
 ---
 
 ## Open work
 
-1. Map Favor-specific steward roles that deserve durable Bishop births (vs temporary bootstrap workers).
-2. Keep being-profile emotion/consciousness aligned with Moment Matrix affect namespaces (counsel only).
-3. Document any device-sense plugins (biometrics, camera) as instrument inputs, not authority.
-4. Continue Electron/Capacitor app shell; embed Unity only for spatial/game surfaces.
+See consolidated [Open Work](./open-work.md). Highlights:
+
+1. Map and birth Favor stewards (map, review, marketplace, reputation first).
+2. Align consciousness with Moment Matrix namespaces (counsel only).
+3. Device-sense plugins as instrument inputs, not authority.
+4. Continue Electron/Capacitor shell; Unity embed only for spatial map.
 
 ---
 
@@ -107,4 +117,4 @@ Practical fusion:
 
 - Bishop: `docs/agent-being-profile.md`, `docs/agent-birth-canal.md`
 - Optimus Nephew: `README.md`, `docs/WHAT-WE-ARE-BUILDING.md`
-- Favor: [Desktop Stack](./desktop-stack.md), [Moment Matrix](./moment-matrix.md), [Instruments Library](./instruments-library.md)
+- Favor: [Desktop Stack](./desktop-stack.md), [Senses Architecture](./senses-architecture.md), [Instrument Rack](./instrument-rack.md), [Moment Matrix](./moment-matrix.md), [Favor Stewards](./favor-stewards.md), [Score Namespaces](./score-namespaces.md), [Open Work](./open-work.md)

@@ -35,19 +35,32 @@ Do a favor for someone. Earn a **P-more** credit (Perceived Moment of Real Energ
 ### Marketplace & Leverage Game
 - Buy, sell, or IOU P-more credits.
 - Strategic network building is rewarded.
-- Gamified experience powered by Unity (2D + 3D views).
+- Gamified experience powered by Unity (2D + 3D views), embedded in the app shell.
 
-## Planned Tech Stack
-- Cross-platform app shell: Electron + Capacitor
-- iOS native layer: Swift
-- Gamification & network map: Unity
-- Backend & NFT layer: TBD (intent/semantic node system, possible blockchain, integration with Approval Engine)
+## Architecture direction
+
+- **App shell:** Electron (desktop) + Capacitor (mobile); Unity embedded for spatial map only.
+- **Agents:** Bishop births durable stewards with being profiles; Optimus Nephew is law; Nephew is runtime. No god-agent.
+- **Measurement:** Instrument rack + Moment Matrix under SCORE-NAMESPACES — scores counsel, policy authorizes, no soul score.
+- **Senses:** Consciousness channels map to instrument inputs (sight, hearing, touch, metaphorical smell/taste).
+
+## Docs
+
+Full index: [docs/README.md](./docs/README.md)
+
+Key architecture notes:
+- [Tech Spec](./docs/tech-spec.md)
+- [Agent Platform](./docs/agent-platform.md)
+- [Senses Architecture](./docs/senses-architecture.md)
+- [Instrument Rack](./docs/instrument-rack.md)
+- [Moment Matrix](./docs/moment-matrix.md)
+- [Open Work](./docs/open-work.md)
 
 ## Current Status
-Repository initialized with core concept documentation. Scaffolding and implementation in progress.
+Repository holds core product docs, measurement architecture, agent fusion notes, and TypeScript modules for YONAW, reputation Y-score, sybil, and rating engines. App shell and steward births are designed; implementation continues.
 
 ## Next Steps
-1. Define precise P-more calculation formula.
-2. Design the voting / reputation engine.
-3. Prototype the network map.
-4. Build basic favor posting & claiming flow.
+1. P0 storage + voting path (see [dependency table](./docs/dependency-table.md)).
+2. Electron/Capacitor shell around voting.
+3. Bishop steward births for map/review/marketplace/reputation.
+4. Instrument rack mounts + Moment Matrix counsel contracts.

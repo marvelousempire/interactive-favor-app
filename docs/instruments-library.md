@@ -3,6 +3,7 @@
 **Primary sources**
 - `media-resolver/lib/instruments/` — concrete instrument implementations and panel
 - `philosophy-semantic-node-framework` — Moment Matrix profiles + VerbNoun library
+- [Instrument Rack](./instrument-rack.md) — how instruments are mounted, read, and consumed
 - This document — Favor-side catalog so every instrument is counted for productization
 
 ---
@@ -19,6 +20,8 @@ Status vocabulary used by Media Resolver:
 - `built` — real signal, real `read()`
 - `specified` — fixed contract, no implementation yet
 - `gap` — named so it is visible on the panel rather than forgotten
+
+The **rack** is the live collection of mounts; this library is the catalog of shapes and shipped instruments. See [Instrument Rack](./instrument-rack.md).
 
 ---
 
@@ -96,7 +99,7 @@ These are the “library” side of the Mode of Expression work:
 - Philosophy / Mindset / Social keyword profiles
 - Moment Matrix engine that binds place + time + scores
 
-See `docs/moment-matrix.md` and `docs/emotion-modeling.md` for full detail.
+See [Moment Matrix](./moment-matrix.md), [Score Namespaces](./score-namespaces.md), and [Emotion Modeling](./emotion-modeling.md).
 
 ---
 
@@ -121,8 +124,19 @@ Every distinct instrument (shape + family + profile version) is a candidate **pr
 
 ## 7. Open gaps to track
 
+See also [Open Work](./open-work.md).
+
 - Dominance axis population for full VAD
 - Plutchik optional overlay (readable labels only)
 - Attention decay and proof-curve instruments
 - Voice / speech signal instruments
 - Explicit Favor consumption contracts for each instrument (what is counsel vs what may affect ranking inputs)
+- Formal mount + reading JSON schemas shared with Media Resolver
+
+---
+
+## Related
+
+- [Instrument Rack](./instrument-rack.md)
+- [Senses Architecture](./senses-architecture.md)
+- [Moment Matrix](./moment-matrix.md)

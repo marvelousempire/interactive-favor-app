@@ -1,10 +1,12 @@
-# Interactive Favor App (P-more) — Technical Specification v0.2
+# Interactive Favor App (P-more) — Technical Specification v0.3
 
 ## 1. System Overview
 
 The Favor app turns real-world favors into tradable non-fungible credits called **P-more** (Perceived Moment of Real Energy). Value is assigned by structured community voting (YONAW), intensity is expressed via quadratic voice credits, and Sybil resistance + privacy are provided by progressive IdentityScore and optional Semaphore / zero-knowledge proofs.
 
 An optional competitive layer (**Ready Play**) lets users opt into ranked leagues powered by pluggable rating engines (Elo, Glicko-2, hybrid, future TrueSkill 2). **Scoreboard Studio** is the control panel for every score in the system.
+
+**Agent direction:** Favor does not invent a god-agent. Durable specialists are born through **Bishop** with being profiles. **Optimus Nephew** is law/manifest. **Nephew** is runtime. Measurement flows through the **instrument rack** and **Moment Matrix** under SCORE-NAMESPACES law (scores counsel; policy authorizes).
 
 ### Core Loop
 1. User performs a favor.
@@ -65,24 +67,37 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 ### 2.8 Scoreboard Studio
 - Control panel and display layer for every score (core Reputation + Ready Play + derived quantities).
 - Engine selector, confidence view (μ − 3σ / r − 2·RD), volatility lens, season browser, comparison mode.
-- See [scoreboard-studio.md](./scoreboard-studio.md).
+- Must not present a composite soul score. See [scoreboard-studio.md](./scoreboard-studio.md).
 
 ### 2.9 Gamified Network Map
-- Unity (2D + 3D).
+- Unity (2D + 3D) **embedded** inside Electron/Capacitor shell.
 - Map starts dark; working with new people reveals territory (Reach).
 - Visualizes leverage and relationship weight.
 
 ### 2.10 App Shell
-- Cross-platform: Electron + Capacitor.
-- Native iOS polish: Swift.
-- Shared business logic in TypeScript where possible.
+- **Electron** desktop foundation; **Capacitor** mobile twin; shared web UI.
+- Unity embedded for spatial/game surfaces only.
+- WordPress + WooCommerce as backend product catalog engine (not primary client UI).
+- See [desktop-stack.md](./desktop-stack.md).
 
 ### 2.11 Marketplace & Honor Contracts
 - Trade / IOU of P-more credits.
 - Private honor contracts with optional notarization via Approval Engine.
 - Leverage game: strategic network position is rewarded.
 
-### 2.12 Backend & Storage (Open)
+### 2.12 Agent Platform (Bishop + Optimus + Nephew)
+- Bishop: sole durable-agent factory; being profile required (consciousness, emotion, tone, …).
+- Optimus Nephew: law, philosophies, Motif product schema.
+- Nephew: runtime + `moment-matrix` package.
+- Favor stewards (map, review, marketplace, reputation, …) born via Bishop when justified.
+- See [agent-platform.md](./agent-platform.md), [favor-stewards.md](./favor-stewards.md), [senses-architecture.md](./senses-architecture.md).
+
+### 2.13 Instrument Rack & Moment Matrix
+- Instrument rack: producers → instruments → mounts → consumers; missing ≠ 0.
+- Moment Matrix: multi-axis utterance scoring at place + time; policy authorizes; no soul score.
+- See [instrument-rack.md](./instrument-rack.md), [moment-matrix.md](./moment-matrix.md), [score-namespaces.md](./score-namespaces.md).
+
+### 2.14 Backend & Storage (Open)
 - User profiles, favor records, votes, nullifier sets, reputation history, Ready Play ratings.
 - Decision pending: pure off-chain + signed attestations vs hybrid with on-chain anchoring.
 
@@ -92,6 +107,7 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 **Vote submission** → IdentityScore check → voice-credit spend → YONAW score → optional Semaphore proof + nullifier → aggregation  
 **Aggregation complete** → favor value locked → Performance / Credibility / Y-score updates → Reach map may update  
 **(If Ready Play)** → rating engine update → Ready Play scoreboard  
+**(Counsel path)** → Moment Matrix / instrument rack readings → steward consciousness (never permission)  
 **Redemption / trade** → marketplace or honor-contract flow
 
 ## 4. Open Technical Decisions
@@ -106,6 +122,7 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 | Tip receipt verification | Manual upload vs zkTLS / payment provider webhooks | Start manual, add zkTLS later |
 | Ready Play default engine | Glicko-2 vs hybrid vs TrueSkill 2 | Glicko-2 for 1v1; TrueSkill 2 later for teams |
 | Performance decay | Half-life vs window vs activity-triggered step | Activity-triggered mild half-life |
+| Agent birth priority | Which stewards first | Map, review, marketplace, reputation |
 
 ## 5. Security & Integrity Priorities
 
@@ -115,6 +132,7 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 4. Chain-of-responsibility liability for Credibility.
 5. Receipt requirement for extreme high scores.
 6. Ready Play anti-gaming (abandon = loss, IdentityScore gates, volatility dampening).
+7. No score-to-permission laundering (SCORE-NAMESPACES / instrument rack law).
 
 ## 6. Implementation Status (Snapshot)
 
@@ -130,6 +148,13 @@ An optional competitive layer (**Ready Play**) lets users opt into ranked league
 | Reputation update engine (Performance, Credibility) | Designed | Not started | Depends on aggregation events |
 | Ready Play seasons / matchmaking | Designed | Not started | Uses `src/rating/` |
 | Scoreboard Studio UI | Designed | Not started | |
-| Network map (Unity) | High-level | Not started | |
+| Network map (Unity) | High-level | Not started | Embedded only |
 | Marketplace | High-level | Not started | |
-| App shell | High-level | Scaffold only | |
+| App shell (Electron + Capacitor) | Designed | Scaffold | See desktop-stack |
+| Bishop steward births for Favor | Designed | Not started | favor-stewards.md |
+| Instrument rack mounts in Favor | Designed | Not started | instrument-rack.md |
+| Moment Matrix Favor consumption | Designed | Package in nephew | Counsel contracts TBD |
+
+## 7. Doc map
+
+See [docs/README.md](./README.md) and [open-work.md](./open-work.md).

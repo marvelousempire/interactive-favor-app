@@ -32,7 +32,7 @@
 | Elo+μ/σ hybrid | Interface | Implemented | P1 | `src/rating/hybrid.ts` |
 | TrueSkill 2 engine | Interface + telemetry | Documented | P2 | Features/mechanics in [trueskill-2.md](./trueskill-2.md) |
 | Ready Play seasons / matchmaking | Rating engines + IdentityScore | Designed | P1 | Opt-in leagues |
-| Scoreboard Studio | Core scores + rating engines | Designed | P1 | Engine selector, confidence view |
+| Scoreboard Studio | Core scores + rating engines | Designed | P1 | No composite soul score |
 
 ## Privacy & Uniqueness
 
@@ -44,6 +44,19 @@
 | External nullifier convention | Favor ID | Documented | P1 | `hash("yonaw-vote", favorId)` |
 | Nullifier store (used-set) | Proof verification | Not started | P1 | DB or on-chain mapping |
 | Optional World ID / PoP boost | IdentityScore | Designed | P2 | Boosts IdentityScore |
+
+## Agent Platform & Measurement
+
+| Component | Depends on | Status | Priority | Tech / Notes |
+|-----------|------------|--------|----------|--------------|
+| Bishop being-profile births | Bishop factory | Designed | P1 | External repo; Favor consumes |
+| Favor steward map | Agent platform + senses | Designed | P1 | [favor-stewards.md](./favor-stewards.md) |
+| Senses → consciousness templates | Being profile | Designed | P1 | [senses-architecture.md](./senses-architecture.md) |
+| Instrument rack mounts | Instruments library + producers | Designed | P1 | [instrument-rack.md](./instrument-rack.md) |
+| Moment Matrix consumption contracts | nephew/moment-matrix | Designed | P1 | Counsel vs authority |
+| SCORE-NAMESPACES compliance | SNF contract | Documented | P0 | [score-namespaces.md](./score-namespaces.md) |
+| Device plugins (camera, biometrics, haptics) | Capacitor / Unity | Designed | P1 | Instrument inputs only |
+| Mood / Mode of Expression instruments | Moment Matrix profiles | Built (Media Resolver) | P1 | Counsel only |
 
 ## Product Surfaces
 
@@ -57,8 +70,8 @@
 | Scoreboard Studio UI | All scores | Not started | P1 | |
 | Honor contracts | P-more record | Designed | P2 | Link to Approval Engine |
 | Marketplace / IOU | P-more + reputation | Designed | P2 | |
-| Unity network map (2D/3D) | Reach graph | High-level | P2 | Unity + data service |
-| App shell (Electron + Capacitor + Swift) | Core engine | Scaffold | P1 | |
+| Unity network map (2D/3D) | Reach graph | High-level | P2 | Embedded in shell only |
+| App shell (Electron + Capacitor) | Core engine | Scaffold | P1 | [desktop-stack.md](./desktop-stack.md) |
 
 ## Infrastructure
 
@@ -87,9 +100,12 @@
    Ready Play seasons on top of `src/rating/` → Scoreboard Studio UI → optional decay jobs.
 
 5. **P1 app shell**  
-   Electron/Capacitor shell around the working voting flow; Swift polish later.
+   Electron/Capacitor shell around the working voting flow; Unity embed for map later.
 
-6. **P2 leverage surfaces**  
+6. **P1 agent + measurement**  
+   Steward births via Bishop → instrument rack mounts → Moment Matrix counsel contracts (no permission laundering).
+
+7. **P2 leverage surfaces**  
    Reach graph → Unity map → marketplace / honor contracts → TrueSkill 2 if team leagues demand it.
 
 ## External Dependencies (Expected)
@@ -100,12 +116,13 @@
 | `@semaphore-protocol/group` | Merkle tree of commitments | Official |
 | `@semaphore-protocol/proof` | Proof gen/verify | Official |
 | `poseidon-lite` or circuit Poseidon | Nullifier & commitments | Must match circuit |
-| Unity | Network map | 2D + 3D |
+| Unity | Network map | Embedded 2D + 3D |
 | Electron + Capacitor | App shell | |
-| Swift | iOS native layer | |
+| Bishop (external) | Durable agent birth | Being profiles |
+| nephew/moment-matrix | Utterance multi-axis scores | Counsel + policy axis |
 | Postgres (or equivalent) | Primary store | Lean |
 | Optional: World ID / zkPassport | PoP boost | |
 
 ---
 
-*This table is the engineering source of truth for sequencing work. Update status as components move from Designed → Stub → Implemented.*
+*This table is the engineering source of truth for sequencing work. Update status as components move from Designed → Stub → Implemented. Architecture backlog: [open-work.md](./open-work.md).*
