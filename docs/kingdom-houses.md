@@ -1,10 +1,12 @@
 # Kingdom Houses Structure — Investigation
 
-**Status:** Investigation note, 2026-08-08.  
+**Status:** Investigation note, 2026-08-08 (Solvency house detail linked).  
 **Canonical doctrine:** `philosophy-kingdoms` (seven-houses, contrasting-pairs, mandatory-process)  
 **Machine registry:** `philosophy-semantic-node-framework/profiles/kingdom-registry.json`  
 **Contracts:** `KINGDOM-ROUTING-CONTRACT.md`, `SUPER-RICK-KINGDOM-FUSION.md`  
 **Bishop narrative (archive):** Kingdom Hotel Framework — Royal Court (reasoning) + Grand Hotel (execution)
+
+**Deep dive:** [Solvency House (House 5)](./solvency-house.md) — Precision/Vision + Microslice Solvency Formula.
 
 ---
 
@@ -30,7 +32,7 @@ Kingdom output is **counsel**. Policy authorizes. Witnesses prove. House 7 synth
 | 2 | `house:valid-intent` | Valid Intent | Intent / Execution |
 | 3 | `house:concept` | Concept | Structure / Flow |
 | 4 | `house:notion` | Notion | Risk / Opportunity |
-| 5 | `house:solvency` | Solvency | Precision / Vision |
+| 5 | `house:solvency` | Solvency | **Precision / Vision** → [detail](./solvency-house.md) |
 | 6 | `house:micro-slice` | Micro-Slice | Logic / Intuition |
 | 7 | `house:action` | Action | **Authorized synthesis runtime** (Empire / operator+policy bounds) |
 
@@ -162,4 +164,4 @@ Do not assign a Favor steward a “House number” as its `primary_role`. A stew
 
 - Doctrine: `philosophy-kingdoms` — `seven-houses.md`, `contrasting-pairs.md`, `mandatory-process.md`, `council-of-thirteen.md`
 - SNF: `profiles/kingdom-registry.json`, `contracts/KINGDOM-ROUTING-CONTRACT.md`
-- Favor: [Bishop Birth Roles](./bishop-birth-roles.md), [Moment Matrix](./moment-matrix.md), [Agent Platform](./agent-platform.md), [Score Namespaces](./score-namespaces.md)
+- Favor: [Solvency House](./solvency-house.md), [Bishop Birth Roles](./bishop-birth-roles.md), [Moment Matrix](./moment-matrix.md), [Agent Platform](./agent-platform.md), [Score Namespaces](./score-namespaces.md)
