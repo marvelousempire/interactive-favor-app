@@ -31,6 +31,7 @@
 - [Instrument Rack](./instrument-rack.md) — rack layers, mounts, read contract, missing-data, senses attachment, Favor consumption
 - [Instruments Library](./instruments-library.md) — measurement shapes, families, shipped instruments, productization path
 - [Moment Matrix](./moment-matrix.md) — multi-axis measurement design (engine, schema, profiles, hard laws)
+- [Favor Moment Matrix](./favor-moment-matrix.md) — product consumption contracts, claim path, steward wiring, non-goals
 - [Score Namespaces](./score-namespaces.md) — Favor-side SCORE-NAMESPACES contract summary
 - [Emotion Modeling](./emotion-modeling.md) — VAD, Plutchik wheel, valence–arousal mapping, sentiment model comparison
 

@@ -5,7 +5,8 @@
 **Source of truth (profiles & law):** `philosophy-semantic-node-framework`  
 **Runnable package:** `nephew/moment-matrix` (`@nephew/moment-matrix`)  
 **CLI:** `node bin/moment-matrix.mjs score|describe|library`  
-**This document:** Favor-side design synthesis from engine, schema, and SCORE-NAMESPACES.
+**This document:** Favor-side design synthesis from engine, schema, and SCORE-NAMESPACES.  
+**Favor product consumption:** [favor-moment-matrix.md](./favor-moment-matrix.md)
 
 ---
 
@@ -76,17 +77,17 @@ Keyword profiles with base + positive/negative weights:
 
 ### Operational stencil (`solvency.stencil_v1`)
 
-Doctrine weights (PHILOSOPHY / research program):
+Doctrine weights:
 
 | Slot | Weight |
 |------|--------|
-| Verb | 0.25 (engine offline currently uses 0.35 for V/N practical detect) |
-| Noun | 0.25 (engine offline 0.35) |
-| Destination | 0.25 (often not auto-filled offline) |
+| Verb | 0.25 |
+| Noun | 0.25 |
+| Destination | 0.25 |
 | Quality | 0.125 |
 | Time | 0.125 |
 
-Pass stencil ≥ **0.90** only when slots are filled. Offline tool honestly leaves D/Q/T incomplete → status `needs-information` until filled.
+Pass stencil ≥ **0.90** only when slots are filled. Offline tool often leaves D/Q/T incomplete → status `needs-information`. See [microslice-solvency-formula.md](./microslice-solvency-formula.md).
 
 ### Policy (`intent.policy_decision`)
 
@@ -152,6 +153,8 @@ Eligible workers (see `moment-matrix/swarm/AGENTS.md`): syntax, library, affect,
 
 ## Product relevance to Favor + ReadyPlay + instrument rack
 
+Favor-specific consumption contracts, claim publish path, and steward wiring: **[favor-moment-matrix.md](./favor-moment-matrix.md)**.
+
 | Matrix output | Favor use | Permitted use |
 |---------------|-----------|---------------|
 | Intent / VerbNoun match | Favor description routing, claim framing | interpretation |
@@ -173,12 +176,12 @@ Never average emotion/philosophy/mindset into a single permission number.
 3. Offline stencil does not auto-fill Destination / Quality / Time.
 4. Spiritual axis stays not-measured without `spiritual_lens_id`.
 5. Browser Presence lite scorer must stay schema-compatible with package engine.
-6. Explicit Favor consumption contracts per namespace still open work.
+6. Explicit Favor adapter + persist `moment_id` still open — see [favor-moment-matrix.md](./favor-moment-matrix.md).
 
 ---
 
 ## Related
 
 - SNF: `contracts/SCORE-NAMESPACES.md`, `RESEARCH-PROGRAM.md`, `profiles/moment-matrix/`
-- Nephew package: `moment-matrix/` (`engine-snf.mjs`, `score.mjs`, `schemas/moment-observation.schema.json`)
-- Favor: [Emotion Modeling](./emotion-modeling.md), [Instrument Rack](./instrument-rack.md), [Instruments Library](./instruments-library.md), [Senses Architecture](./senses-architecture.md)
+- Nephew package: `moment-matrix/` (`engine-snf.mjs`, `score.mjs`, `schemas/moment-observation.schema.json`, `PHILOSOPHY.md`)
+- Favor: [Favor Moment Matrix](./favor-moment-matrix.md), [Emotion Modeling](./emotion-modeling.md), [Instrument Rack](./instrument-rack.md), [Instruments Library](./instruments-library.md), [Senses Architecture](./senses-architecture.md)
