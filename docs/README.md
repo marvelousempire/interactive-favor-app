@@ -2,16 +2,19 @@
 
 **Session record:** [Architecture Session 2026-08](./architecture-session-2026-08.md)  
 **Product framing:** [What Favor Is](./favor-product.md) · [Verb / Noun Favors](./verb-noun-favors.md) · [Favor Barter & Solvency](./favor-barter-solvency.md)  
+**Framework template:** [Favor as Framework](./favor-as-framework.md) · [Biological Atlas Metaphor](./biological-atlas-metaphor.md)  
 **Infrastructure:** [Atlas](./infrastructure-atlas.md) · [ops](./ops/README.md) · [GitTalk Sync](./gittalk-sync.md)
 
 ## Core Product
 - [What Favor Is — Product Definition](./favor-product.md)
 - [Verb Favors and Noun Favors](./verb-noun-favors.md)
 - [Favor Barter and Solvency](./favor-barter-solvency.md)
+- [Favor as Framework Template](./favor-as-framework.md) — Bootstrap English boilerplate; unique servings; why Electron
+- [Biological Atlas Metaphor](./biological-atlas-metaphor.md) — intent function+form; Nephew→Avery growth; zoom layers
 - [Technical Specification v0.4](./tech-spec.md)
 - [Engineering Dependency Table](./dependency-table.md)
-- [Infrastructure Atlas](./infrastructure-atlas.md) — MacBook, DGX Spark, DXP6800, Electron pipeline
-- [GitTalk Sync](./gittalk-sync.md) — forge handoffs and home/mirror synchronization
+- [Infrastructure Atlas](./infrastructure-atlas.md)
+- [GitTalk Sync](./gittalk-sync.md)
 - [Open Work](./open-work.md)
 - [Scoreboard](./scoreboard.md)
 - [Scoreboard Studio](./scoreboard-studio.md)
